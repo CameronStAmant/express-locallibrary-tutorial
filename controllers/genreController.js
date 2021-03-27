@@ -165,7 +165,6 @@ exports.genre_update_post = [
 
   (req, res, next) => {
     const errors = validationResult(req);
-    console.log(req.params);
     var genre = new Genre({ name: req.body.name, _id: req.params.id });
 
     if (!errors.isEmpty()) {

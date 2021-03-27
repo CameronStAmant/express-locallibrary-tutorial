@@ -39,10 +39,13 @@ block content
         values=(undefined===bookinstance ? '' : bookinstance.status)
       )
         each option in options
-          if option.name===bookinstance.status
-            option(selected value=option.name) #{option.name}
+          if bookinstance!==undefined
+            if option.name===bookinstance.status 
+              option(selected value=option.name) #{option.name}
+            else 
+              option(value=option.name) #{option.name}
           else 
-            option(value=option.name) #{option.name}
+              option(value=option.name) #{option.name}
 
     button.btn.btn-primary(type='submit') Submit 
   
